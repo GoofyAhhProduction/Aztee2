@@ -77,7 +77,7 @@ Aiming.FOVCircle = circle
 
 -- Outline
 local outline = Drawing.new("Circle")
-outline.Thickness = 2
+outline.Thickness = 0.70
 outline.NumSides = 100
 outline.Radius = circle.Radius
 outline.Filled = false
