@@ -110,6 +110,7 @@ function Aiming.UpdateFOV2()
     -- // Set outline Properties
     outline.Visible = Aiming.ShowFOV
     outline.Radius = (Aiming.FOV * 3)
+    outline.Position = Vector2new(Mouse.X, Mouse.Y + GetGuiInset(GuiService).Y)
     outline.NumSides = outline.NumSides
     outline.Color = Color3.new(0,0,0)
 
