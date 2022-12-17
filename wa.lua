@@ -114,8 +114,8 @@ function Aiming.UpdateFOV2()
     outline.NumSides = outline.NumSides
     outline.Color = Color3.new(0,0,0)
 
-    -- // Return circle
-    return circle
+    -- // Return outline
+    return outline
 end
 
 -- // Custom Functions
