@@ -82,7 +82,7 @@ outline.Radius = circle.Radius
 outline.Filled = false
 outline.Visible = Aiming.ShowFOV
 outline.ZIndex = 999
-outline.Color = Color3.fromRGB(0, 0, 0)
+outline.Color = Color3.new(0,0,0)
 
 -- // Update
 function Aiming.UpdateFOV()
@@ -97,6 +97,22 @@ function Aiming.UpdateFOV()
     circle.Position = Vector2new(Mouse.X, Mouse.Y + GetGuiInset(GuiService).Y)
     circle.NumSides = Aiming.FOVSides
     circle.Color = Aiming.FOVColour
+
+    -- // Return circle
+    return circle
+end
+
+function Aiming.UpdateFOV2()
+    -- // Make sure the circle exists
+    if not (outline) then
+        return
+    end
+
+    -- // Set outline Properties
+    outline.Visible = Aiming.ShowFOV
+    outline.Radius = (Aiming.FOV * 3)
+    outline.NumSides = outline.NumSides
+    outline.Color = Color3.new(0,0,0)
 
     -- // Return circle
     return circle
@@ -441,6 +457,7 @@ end
 -- // Heartbeat Function
 Heartbeat:Connect(function()
     Aiming.UpdateFOV()
+    Aiming.UpdateFOV2()
     Aiming.GetClosestPlayerToCursor()
 end)
 
