@@ -37,7 +37,7 @@ local tableinsert = table.insert
 getgenv().Aiming = {
     Enabled = true,
     
-    FOVTH = 7,
+    FOVTH = 12,
     ShowFOV = false,
     FOV = 35,
     FOVSides = 300,
@@ -77,7 +77,7 @@ Aiming.FOVCircle = circle
 
 -- Outline
 local outline = Drawing.new("Circle")
-outline.Thickness = 0.70
+outline.Thickness = 0.12
 outline.NumSides = 100
 outline.Radius = circle.Radius
 outline.Filled = false
