@@ -73,13 +73,14 @@ circle.Thickness = 3
 circle.Color = Aiming.FOVColour
 circle.Filled = false
 Aiming.FOVCircle = circle
+
 -- Outline
 local outline = Drawing.new("Circle")
 outline.Thickness = 0.3
 outline.NumSides = 100
-outline.Radius = fov_circle.Radius
+outline.Radius = circle.Radius
 outline.Filled = false
-outline.Visible = getgenv().Aiming.ShowFOV
+outline.Visible = Aiming.ShowFOV
 outline.ZIndex = 999
 outline.Color = Color3.fromRGB(0, 0, 0)
 
