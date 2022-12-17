@@ -81,7 +81,6 @@ outline.NumSides = 100
 outline.Radius = circle.Radius
 outline.Filled = false
 outline.Visible = Aiming.ShowFOV
-outline.ZIndex = 999
 outline.Color = Color3.new(0,0,0)
 
 -- // Update
@@ -114,8 +113,8 @@ function Aiming.UpdateFOV2()
     outline.NumSides = outline.NumSides
     outline.Color = Color3.new(0,0,0)
 
-    -- // Return outline
-    return outline
+    -- // Return circle
+    return circle
 end
 
 -- // Custom Functions
@@ -436,7 +435,7 @@ function Aiming.GetClosestPlayerToCursor()
             -- // Check if part exists and health
             if (TargetPartTemp and Aiming.CheckHealth(Player)) then
                 -- // Check if is in FOV
-                if (circle.Radius > Magnitude and Magnitude < ShortestDistance) then
+                if (circle.Radius > Magnitude and outline.Radius > Magnitude and Magnitude < ShortestDistance) then
                     -- // Check if Visible
                     if (Aiming.VisibleCheck and not Aiming.IsPartVisible(TargetPartTemp, Character)) then continue end
 
